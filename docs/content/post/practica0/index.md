@@ -116,4 +116,4 @@ ___
 # Enlaces
 
 [GitHub](https://github.com/FernandoGonzalezBorbas/PortafolioPP "Repositorio GitHub")
-[GitHub Pages](https://github.com/FernandoGonzalezBorbas/PortafolioPP "GitHub Pages")
+[GitHub Pages](https://fernandogonzalezborbas.github.io/PortafolioPP/ "GitHub Pages")
