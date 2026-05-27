@@ -479,7 +479,5 @@ la siguiente imagen muestra el resultado final de la cola llena despues de haber
 *El mensaje "Imprimiendo pagina X de Y..." incluye un delay de 500 ms por página 
 mediante Sleep(), sin embargo al ser una captura no es posible apreciarlo por aqui, obviamente.*
 
-#### Enlace de portafolio en Github
-https://github.com/Troy2404/portafolio_paradigmas.git
-#### Enlace de página estática en Github Pages
-https://troy2404.github.io/portafolio_paradigmas/
+[GitHub](https://github.com/FernandoGonzalezBorbas/PortafolioPP "Repositorio GitHub")
+[GitHub Pages](https://fernandogonzalezborbas.github.io/PortafolioPP/ "GitHub Pages")
