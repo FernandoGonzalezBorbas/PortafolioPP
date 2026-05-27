@@ -454,27 +454,27 @@ GeeksforGeeks. (2024). Dynamic memory allocation in C using malloc(), calloc(), 
 
 ### Sesión 1 — Cola Estática
 
-![Prueba cola estática 1](Prueba1-1.png)
+![Prueba cola estática 1](./Prueba1-1.png)
 
 *Para no hacerlo tan extenso omitimos la captura del llenado completo de los 10 trabajos, 
 la siguiente imagen muestra el resultado final de la cola llena despues de haber puesto los 10 trabajos.*
 
-![Prueba cola estática 2](Prueba1-2.png)
+![Prueba cola estática 2](./Prueba1-2.png)
 
 ### Sesión 2 — Cola Dinámica (flujo FIFO)
 
-![Prueba cola estática 1](Prueba2-1.png)
+![Prueba cola estática 1](./Prueba2-1.png)
 
 
-![Prueba cola estática 2](Prueba2-2.png)
+![Prueba cola estática 2](./Prueba2-2.png)
 
 
 ### Sesión 3 — Simulación y Mejoras
 
-![Prueba cola estática 1](Prueba3-1.png)
+![Prueba cola estática 1](./Prueba3-1.png)
 
 
-![Prueba cola estática 2](Prueba3-2.png)
+![Prueba cola estática 2](./Prueba3-2.png)
 
 *El mensaje "Imprimiendo pagina X de Y..." incluye un delay de 500 ms por página 
 mediante Sleep(), sin embargo al ser una captura no es posible apreciarlo por aqui, obviamente.*
