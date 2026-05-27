@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="date--2026-04-20t175846-0800draft--falsetitle--práctica-4-el-paradigma-lógicoweight--5">+++
+date = '2026-04-20T17:58:46-08:00'
+draft = false
+title = 'Práctica 4: El paradigma lógico'
+weight = 5
++++</h2>
+<h2 id="1-introducción">1. Introducción</h2>
+<h3 id="11-objetivo">1.1 Objetivo</h3>
+<p>El objetivo de esta práctica fue explorar el <strong>paradigma lógico</strong> de programación mediante el lenguaje <strong>Prolog</strong>, implementando dos problemas clásicos de inteligencia artificial: las <strong>Torres de Hanoi</strong> y el problema del <strong>Mono y la Banana</strong>. A diferencia del paradigma funcional —explorado en la práctica anterior con Haskell—, en el paradigma lógico el programador no describe <em>cómo</em> resolver un problema, sino <em>qué</em> es verdad sobre él, dejando al motor de inferencia la tarea de encontrar la solución.</p>
+<h3 id="12-herramientas-utilizadas">1.2 Herramientas utilizadas</h3>
+<p>La implementación se realizó con <strong>SWI-Prolog</strong>, el intérprete de Prolog más utilizado en entornos académicos y de producción.</p>
+<table>
+<thead>
+<tr>
+<th>Herramienta</th>
+<th>Versión</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SWI-Prolog</strong></td>
+<td>10.0.2</td>
+<td>Intérprete y compilador de Prolog</td>
+</tr>
+<tr>
+<td><strong>swipl</strong></td>
+<td>10.0.2</td>
+<td>Comando de línea para ejecutar archivos <code>.pl</code></td>
+</tr>
+<tr>
+<td><strong>VSCode</strong></td>
+<td>—</td>
+<td>Editor de código con soporte de sintaxis Prolog</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-conceptos-clave-del-paradigma-lógico">1.3 Conceptos clave del paradigma lógico</h3>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hechos</strong></td>
+<td>Afirmaciones incondicionales sobre el dominio (<code>padre(juan, maria).</code>)</td>
+</tr>
+<tr>
+<td><strong>Reglas</strong></td>
+<td>Relaciones condicionales definidas mediante implicación (<code>:-</code>)</td>
+</tr>
+<tr>
+<td><strong>Consultas</strong></td>
+<td>Preguntas al motor de inferencia (<code>?- hanoi(3, a, c, b).</code>)</td>
+</tr>
+<tr>
+<td><strong>Unificación</strong></td>
+<td>Mecanismo por el que Prolog empareja variables con valores</td>
+</tr>
+<tr>
+<td><strong>Backtracking</strong></td>
+<td>Retroceso automático para explorar soluciones alternativas</td>
+</tr>
+<tr>
+<td><strong>Recursión</strong></td>
+<td>Principal mecanismo de control, equivalente a los bucles en otros paradigmas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-desarrollo-de-la-práctica">2. Desarrollo de la práctica</h2>
+<h3 id="21-estructura-de-los-archivos">2.1 Estructura de los archivos</h3>
+<p>Los dos problemas se implementaron en archivos <code>.pl</code> separados y se ejecutaron directamente desde PowerShell:</p>
+<pre class="hljs"><code><div>practica4/
+├── hanoi_mono.pl      ← Torres de Hanoi
+└── mono_banana.pl     ← El mono y la banana
+</div></code></pre>
+<p>Para cargar y ejecutar cada archivo se utilizó el siguiente flujo en la terminal:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Lanzar el intérprete cargando el archivo directamente</span>
+swipl hanoi_mono.pl
+
+<span class="hljs-comment"># Dentro del intérprete, ejecutar la consulta</span>
+?- hanoi(<span class="hljs-number">3</span>, a, c, b).
+</div></code></pre>
+<hr>
+<h3 id="22-torres-de-hanoi">2.2 Torres de Hanoi</h3>
+<h4 id="descripción-del-problema">Descripción del problema</h4>
+<p>Las Torres de Hanoi consisten en mover <strong>N discos</strong> de un poste de origen a uno de destino, usando un poste auxiliar, sin colocar nunca un disco más grande sobre uno más pequeño.</p>
+<h4 id="código-fuente">Código fuente</h4>
+<pre class="hljs"><code><div><span class="hljs-comment">% Caso base: mover un solo disco</span>
+hanoi(<span class="hljs-number">1</span>, <span class="hljs-symbol">Origen</span>, <span class="hljs-symbol">Destino</span>, <span class="hljs-symbol">_</span>) :-
+    write(<span class="hljs-string">&#x27;Mover disco de &#x27;</span>), write(<span class="hljs-symbol">Origen</span>),
+    write(<span class="hljs-string">&#x27; a &#x27;</span>), writeln(<span class="hljs-symbol">Destino</span>).
+
+<span class="hljs-comment">% Caso recursivo</span>
+hanoi(<span class="hljs-symbol">N</span>, <span class="hljs-symbol">Origen</span>, <span class="hljs-symbol">Destino</span>, <span class="hljs-symbol">Aux</span>) :-
+    <span class="hljs-symbol">N</span> &gt; <span class="hljs-number">1</span>,
+    <span class="hljs-symbol">N1</span> is <span class="hljs-symbol">N</span> - <span class="hljs-number">1</span>,
+    hanoi(<span class="hljs-symbol">N1</span>, <span class="hljs-symbol">Origen</span>, <span class="hljs-symbol">Aux</span>, <span class="hljs-symbol">Destino</span>),
+    write(<span class="hljs-string">&#x27;Mover disco de &#x27;</span>), write(<span class="hljs-symbol">Origen</span>),
+    write(<span class="hljs-string">&#x27; a &#x27;</span>), writeln(<span class="hljs-symbol">Destino</span>),
+    hanoi(<span class="hljs-symbol">N1</span>, <span class="hljs-symbol">Aux</span>, <span class="hljs-symbol">Destino</span>, <span class="hljs-symbol">Origen</span>).
+</div></code></pre>
+<h4 id="análisis-del-código">Análisis del código</h4>
+<p>El predicado <code>hanoi/4</code> se define con dos cláusulas:</p>
+<ul>
+<li><strong>Caso base</strong> (<code>N = 1</code>): si solo hay un disco, se imprime directamente el movimiento. El cuarto argumento —el poste auxiliar— se ignora con <code>_</code>.</li>
+<li><strong>Caso recursivo</strong> (<code>N &gt; 1</code>): se descompone el problema en tres subproblemas. Primero se mueven los <code>N-1</code> discos superiores al auxiliar; luego se mueve el disco grande al destino; finalmente se mueven los <code>N-1</code> discos del auxiliar al destino. La recursión termina garantizando que nunca se apila un disco mayor sobre uno menor.</li>
+</ul>
+<p>El número de movimientos generados sigue la fórmula <strong>2ⁿ − 1</strong>, lo que para 3 discos produce exactamente 7 pasos.</p>
+<h4 id="salida-obtenida">Salida obtenida</h4>
+<p><img src="hanoi_output.png" alt="Salida de Torres de Hanoi en SWI-Prolog"></p>
+<p>La ejecución de <code>?- hanoi(3, a, c, b).</code> generó los 7 movimientos correctos y terminó con <code>true.</code>, confirmando que el predicado se satisfizo exitosamente.</p>
+<hr>
+<h3 id="23-el-mono-y-la-banana">2.3 El Mono y la Banana</h3>
+<h4 id="descripción-del-problema-1">Descripción del problema</h4>
+<p>Un mono se encuentra en la puerta de una habitación. En el centro del techo hay una banana colgada. Hay una caja en la ventana. El mono debe: caminar hacia la caja, empujarla al centro, subirse encima y agarrar la banana. Este problema modela la <strong>búsqueda en un espacio de estados</strong>.</p>
+<h4 id="representación-del-estado">Representación del estado</h4>
+<p>El estado del mundo se representa como un término compuesto con cuatro componentes:</p>
+<pre class="hljs"><code><div>estado(<span class="hljs-symbol">PosicionMono</span>, <span class="hljs-symbol">Altura</span>, <span class="hljs-symbol">PosicionCaja</span>, <span class="hljs-symbol">TieneBanana</span>)
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valores posibles</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PosicionMono</code></td>
+<td><code>puerta</code>, <code>ventana</code>, <code>centro</code></td>
+<td>Ubicación horizontal del mono</td>
+</tr>
+<tr>
+<td><code>Altura</code></td>
+<td><code>suelo</code>, <code>encima</code></td>
+<td>Si el mono está en el suelo o encima de la caja</td>
+</tr>
+<tr>
+<td><code>PosicionCaja</code></td>
+<td><code>puerta</code>, <code>ventana</code>, <code>centro</code></td>
+<td>Ubicación de la caja</td>
+</tr>
+<tr>
+<td><code>TieneBanana</code></td>
+<td><code>no</code>, <code>si</code></td>
+<td>Si el mono ya agarró la banana</td>
+</tr>
+</tbody>
+</table>
+<h4 id="código-fuente-1">Código fuente</h4>
+<pre class="hljs"><code><div><span class="hljs-comment">% Acción 1: caminar hacia donde está la caja</span>
+caminar(estado(<span class="hljs-symbol">_</span>, suelo, <span class="hljs-symbol">Caja</span>, <span class="hljs-symbol">Banana</span>),
+        estado(<span class="hljs-symbol">Caja</span>, suelo, <span class="hljs-symbol">Caja</span>, <span class="hljs-symbol">Banana</span>)) :-
+    write(<span class="hljs-string">&#x27;Camina hacia la caja&#x27;</span>), nl.
+
+<span class="hljs-comment">% Acción 2: empujar la caja al centro</span>
+mover_caja(estado(<span class="hljs-symbol">Pos</span>, suelo, <span class="hljs-symbol">Pos</span>, no),
+           estado(centro, suelo, centro, no)) :-
+    write(<span class="hljs-string">&#x27;Empuja la caja al centro&#x27;</span>), nl.
+
+<span class="hljs-comment">% Acción 3: subirse a la caja</span>
+subir(estado(centro, suelo, centro, no),
+      estado(centro, encima, centro, no)) :-
+    write(<span class="hljs-string">&#x27;Sube a la caja&#x27;</span>), nl.
+
+<span class="hljs-comment">% Acción 4: agarrar la banana</span>
+agarrar(estado(centro, encima, centro, no),
+        estado(centro, encima, centro, si)) :-
+    write(<span class="hljs-string">&#x27;Agarra la banana!&#x27;</span>), nl.
+
+<span class="hljs-comment">% Solución: cuatro acciones encadenadas</span>
+solucionar(<span class="hljs-symbol">E0</span>) :-
+    caminar(<span class="hljs-symbol">E0</span>, <span class="hljs-symbol">E1</span>),
+    mover_caja(<span class="hljs-symbol">E1</span>, <span class="hljs-symbol">E2</span>),
+    subir(<span class="hljs-symbol">E2</span>, <span class="hljs-symbol">E3</span>),
+    agarrar(<span class="hljs-symbol">E3</span>, <span class="hljs-symbol">_</span>).
+</div></code></pre>
+<h4 id="análisis-del-código-1">Análisis del código</h4>
+<p>Cada acción se define como un predicado binario que recibe un estado y produce el estado resultante. Prolog resuelve <code>solucionar/1</code> mediante <strong>encadenamiento hacia adelante</strong>: intenta unificar el estado inicial con las precondiciones de <code>caminar/2</code>; si tiene éxito, pasa el estado resultante a <code>mover_caja/2</code>, y así sucesivamente. Si alguna unificación falla, el motor aplica <em>backtracking</em> automáticamente para explorar caminos alternativos.</p>
+<p>Un aspecto importante fue la corrección del predicado <code>mover_caja</code>: en la versión inicial se usaba <code>estado(Caja, suelo, Caja, no)</code>, que exige que el mono ya esté en la misma posición que la caja. Como el estado inicial tiene al mono en <code>puerta</code> y la caja en <code>ventana</code>, la unificación fallaba y el predicado retornaba <code>false</code>. La solución fue agregar el paso <code>caminar/2</code> antes de empujar, y usar <code>Pos</code> como variable de posición compartida para que Prolog unifique correctamente.</p>
+<h4 id="salida-obtenida-1">Salida obtenida</h4>
+<p><img src="mono_banana_output.png" alt="Salida del problema del Mono y la Banana en SWI-Prolog"></p>
+<p>La ejecución de <code>?- solucionar(estado(puerta, suelo, ventana, no)).</code> imprimió los cuatro pasos de la solución y terminó con <code>true.</code></p>
+<hr>
+<h3 id="24-problemas-encontrados-y-soluciones">2.4 Problemas encontrados y soluciones</h3>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Causa</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ERROR: Syntax error: Operator expected</code></td>
+<td>La consulta se escribió sin el punto final <code>.</code></td>
+<td>Siempre terminar las consultas con <code>.</code> y presionar Enter</td>
+</tr>
+<tr>
+<td><code>ERROR: Unknown procedure: hanoi/4</code></td>
+<td>El intérprete se lanzó sin cargar el archivo</td>
+<td>Ejecutar <code>swipl archivo.pl</code> o usar <code>[archivo].</code> dentro del intérprete</td>
+</tr>
+<tr>
+<td><code>false.</code> en <code>solucionar/1</code></td>
+<td><code>mover_caja</code> fallaba porque el mono y la caja estaban en posiciones distintas</td>
+<td>Agregar la acción <code>caminar/2</code> como primer paso de la solución</td>
+</tr>
+<tr>
+<td><code>Warning: Singleton variables: [Pos]</code></td>
+<td>Variable <code>Pos</code> declarada pero no utilizada en el cuerpo de la cláusula</td>
+<td>Usar <code>_</code> para variables que no se necesitan, o corregir la lógica</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3-comparativa-de-paradigmas">3. Comparativa de paradigmas</h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Imperativo / OO</th>
+<th>Funcional (Haskell)</th>
+<th>Lógico (Prolog)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unidad básica</strong></td>
+<td>Instrucción / Clase</td>
+<td>Función pura</td>
+<td>Predicado / Cláusula</td>
+</tr>
+<tr>
+<td><strong>Control de flujo</strong></td>
+<td>Bucles, condicionales</td>
+<td>Recursión, pattern matching</td>
+<td>Unificación, backtracking</td>
+</tr>
+<tr>
+<td><strong>Estado</strong></td>
+<td>Mutable</td>
+<td>Inmutable</td>
+<td>No existe estado explícito</td>
+</tr>
+<tr>
+<td><strong>Cómo se programa</strong></td>
+<td><em>Cómo</em> resolver</td>
+<td><em>Qué</em> transformar</td>
+<td><em>Qué</em> es verdad</td>
+</tr>
+<tr>
+<td><strong>Manejo de errores</strong></td>
+<td>Excepciones</td>
+<td>Tipos (<code>Maybe</code>, <code>Either</code>)</td>
+<td>Fallo de unificación + backtracking</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-conclusiones">4. Conclusiones</h2>
+<p>Esta práctica demostró las características fundamentales del paradigma lógico frente a los paradigmas explorados anteriormente.</p>
+<p>En Prolog no se escribe un algoritmo paso a paso: se declaran <strong>relaciones</strong> entre estados y el motor de inferencia se encarga de encontrar una secuencia de pasos que satisfaga la consulta. Esto hace que el código sea notablemente compacto —el problema completo de las Torres de Hanoi se resuelve en 8 líneas de Prolog— pero requiere comprender con precisión cómo funciona la unificación.</p>
+<p>El problema del Mono y la Banana evidenció la importancia de la representación del estado: un error en las precondiciones de un predicado provoca que la unificación falle silenciosamente (<code>false</code>), sin un mensaje de error explícito. Esto exige depurar el código razonando sobre qué valores intenta unificar Prolog en cada paso, lo que es una habilidad diferente a la depuración tradicional.</p>
+<p>Como área de oportunidad, la legibilidad del código Prolog disminuye rápidamente al crecer la cantidad de predicados. Para problemas más grandes, herramientas como el trazador de SWI-Prolog (<code>trace/0</code>) o el depurador gráfico serían esenciales para seguir el árbol de búsqueda.</p>
+<hr>
+<h2 id="5-referencias">5. Referencias</h2>
+<ol>
+<li>Gallegos Mariscal, J. C. (s.f.). <em>Práctica IV: El paradigma lógico</em> [Material de clase]. ISyTE — Paradigmas de la Programación, UABC.</li>
+<li>Tutorialspoint. (s.f.). <em>Prolog tutorial</em>. Tutorialspoint. https://www.tutorialspoint.com/prolog/index.html</li>
+</ol>
+<h1 id="enlaces">Enlaces</h1>
+<p><a href="https://github.com/KenanRojasArroyo/portafolioPP" title="Repositorio GitHub">GitHub</a>
+<a href="https://kenanrojasarroyo.github.io/portafolioPP/" title="GitHub Pages">GitHub Pages</a></p>
+
+</body>
+</html>

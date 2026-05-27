@@ -2,8 +2,10 @@
 date = '2026-02-13T17:55:06-08:00'
 draft = false
 title = 'Práctica 0: Uso de Repositorios'
-type = "post"
+weight = 1
 +++
+
+---
 
 # Markdown
 
@@ -115,5 +117,5 @@ ___
 
 # Enlaces
 
-[GitHub](https://github.com/FernandoGonzalezBorbas/PortafolioPP "Repositorio GitHub")
-[GitHub Pages](https://fernandogonzalezborbas.github.io/PortafolioPP/ "GitHub Pages")
+[GitHub](https://github.com/KenanRojasArroyo/portafolioPP "Repositorio GitHub")
+[GitHub Pages](https://kenanrojasarroyo.github.io/portafolioPP/ "GitHub Pages")
