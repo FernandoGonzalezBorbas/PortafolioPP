@@ -208,5 +208,5 @@ Como área de oportunidad, la legibilidad del código Prolog disminuye rápidame
 
 # Enlaces
 
-[GitHub](https://github.com/KenanRojasArroyo/portafolioPP "Repositorio GitHub")
-[GitHub Pages](https://kenanrojasarroyo.github.io/portafolioPP/ "GitHub Pages")
+[GitHub](https://github.com/FernandoGonzalezBorbas/PortafolioPP "Repositorio GitHub")
+[GitHub Pages](https://fernandogonzalezborbas.github.io/PortafolioPP/ "GitHub Pages")

@@ -346,5 +346,5 @@ Como área de mejora, se identificó que el uso de un estado global en memoria e
 
 # Enlaces
 
-[GitHub](https://github.com/KenanRojasArroyo/portafolioPP "Repositorio GitHub")
-[GitHub Pages](https://kenanrojasarroyo.github.io/portafolioPP/ "GitHub Pages")
+[GitHub](https://github.com/FernandoGonzalezBorbas/PortafolioPP "Repositorio GitHub")
+[GitHub Pages](https://fernandogonzalezborbas.github.io/PortafolioPP/ "GitHub Pages")
